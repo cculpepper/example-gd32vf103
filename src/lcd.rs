@@ -58,13 +58,6 @@ fn main() -> ! {
     let ferris = Image16BPP::new(include_bytes!("./ferris.raw"), 86, 64).translate(Coord::new(40, 33));
 
     disp.draw(ferris.into_iter());
-    
-
-// Next goal is to set up a simple PWM on PA0. This is the VFD filament wire.
-// Datasheet says 50/60 Hz, so it probably can take ~48 to 64 ish...
-// Actually, we're good to push it over 10KHz. 
-// Timer 4, channel 0. This runs off the CK_TIMER clock
-//
 
     loop {}
 }
