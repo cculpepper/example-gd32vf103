@@ -14,6 +14,7 @@ use hal::prelude::*;
 use hal::pac as pac;
 use hal::spi::{Spi, Mode, Polarity, Phase};
 use hal::delay;
+use hal::ctimer;
 use embedded_hal::blocking::delay::DelayMs;
 use st7735_lcd;
 use st7735_lcd::Orientation;
@@ -25,7 +26,7 @@ fn main() -> ! {
     let mut gpioa = dp.GPIOA.split(&mut rcu.apb2);
     let mut gpiob = dp.GPIOB.split(&mut rcu.apb2);
     let clocks = rcu.clocks;
-    let ctimer = dp.CTIMER;
+    let ctimer = ctimer::CoreTimer::new(dp.CTIMER);;
     let mut delay = delay::Delay::new(clocks, ctimer);
     let sck = gpioa.pa5.into_alternate_push_pull(&mut gpioa.ctl0);
     let miso = gpioa.pa6.into_floating_input(&mut gpioa.ctl0);

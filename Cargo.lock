@@ -38,7 +38,7 @@ version = "0.1.0"
 dependencies = [
  "embedded-graphics 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "embedded-hal 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
- "gd32vf103-hal 0.0.1",
+ "gd32vf103-hal 0.0.2",
  "panic-halt 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "riscv-rt 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "st7735-lcd 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -46,10 +46,10 @@ dependencies = [
 
 [[package]]
 name = "gd32vf103-hal"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "embedded-hal 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
- "gd32vf103-pac 0.2.0",
+ "gd32vf103-pac 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "nb 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "riscv 0.5.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "void 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -58,6 +58,7 @@ dependencies = [
 [[package]]
 name = "gd32vf103-pac"
 version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "bare-metal 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "riscv 0.5.4 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -228,6 +229,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum bit_field 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ed8765909f9009617974ab6b7d332625b320b33c326b1e9321382ef1999b5d56"
 "checksum embedded-graphics 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)" = "704679bfcb66cc748ec185ae62ccd5b03311a53793372e2abf1ff9a7e9875ff7"
 "checksum embedded-hal 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)" = "ee4908a155094da7723c2d60d617b820061e3b4efcc3d9e293d206a5a76c170b"
+"checksum gd32vf103-pac 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "23d2b56f9ea667f247ff79e58e52051af7d618b9d76ebc8eaaec087e8cc3e8ad"
 "checksum nb 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "b1411551beb3c11dedfb0a90a0fa256b47d28b9ec2cdff34c25a2fa59e45dbdc"
 "checksum num-derive 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)" = "eafd0b45c5537c3ba526f79d3e75120036502bebacbb3f3220914067ce39dbf2"
 "checksum num-traits 0.2.11 (registry+https://github.com/rust-lang/crates.io-index)" = "c62be47e61d1842b9170f0fdeec8eba98e60e90e5446449a0545e5152acd7096"

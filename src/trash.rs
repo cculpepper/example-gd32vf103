@@ -9,6 +9,7 @@ use gd32vf103_hal as hal;
 use hal::prelude::*;
 use hal::pac as pac;
 use hal::delay;
+use hal::ctimer;
 use hal::systick::Systick;
 use embedded_hal::blocking::delay::DelayMs;
 
@@ -30,7 +31,7 @@ fn main() -> !
     let mut pc13 = gpioc.pc13.into_push_pull_output(&mut gpioc.ctl1)
         .lock(&mut gpioc.lock);
     let clocks = rcu.clocks;
-    let ctimer = dp.CTIMER;
+    let ctimer = ctimer::CoreTimer::new(dp.CTIMER);
     let mut delay = delay::Delay::new(clocks, ctimer);
     let mut i : u32;
     gpioa.lock.freeze();

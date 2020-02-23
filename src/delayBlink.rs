@@ -9,6 +9,7 @@ use gd32vf103_hal as hal;
 use hal::prelude::*;
 use hal::pac as pac;
 use hal::delay;
+use hal::ctimer;
 use embedded_hal::blocking::delay::DelayMs;
 
 #[entry]
@@ -24,7 +25,7 @@ fn main() -> !
     gpioa.lock.freeze();
 
     let clocks = rcu.clocks;
-    let ctimer = dp.CTIMER;
+    let ctimer = ctimer::CoreTimer::new(dp.CTIMER);
     let mut delay = delay::Delay::new(clocks, ctimer);
     loop {
         pa1.toggle().unwrap();
