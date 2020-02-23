@@ -9,11 +9,25 @@ edition = "2018"
 [dependencies]
 riscv-rt = "0.6"
 panic-halt = "0.2.0"
-# gd32vf103-hal = {path = "../gd32vf103-hal", version = "0.0"}
-gd32vf103-hal = "*"
+gd32vf103-hal = {path = "../gd32vf103-hal", version = "0.0"}
+# gd32vf103-hal = "*"
+st7735-lcd = "0.6.1"
+embedded-hal = "*"
+
+
+[dependencies.embedded-graphics]
+optional = true
+version = "0.5"
+
+#Pulled from th eLCD library
+[features]
+default = ["graphics"]
+graphics = ["embedded-graphics"]
 
 # this lets you use `cargo fix`!
 [[bin]]
 name = "example-gd32vf103"
 test = false
 bench = false
+
+
