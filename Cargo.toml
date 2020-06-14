@@ -17,7 +17,7 @@ embedded-hal = "*"
 
 [dependencies.embedded-graphics]
 optional = true
-version = "0.5"
+version = "0.5.2"
 
 #Pulled from th eLCD library
 [features]
